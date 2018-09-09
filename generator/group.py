@@ -46,6 +46,11 @@ testdata = [Group(name="")] + [
 
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
+try:
+    os.remove(file)
+except OSError:
+    pass
+
 excel = Excel.ApplicationClass()
 excel.Visible = True
 
@@ -56,6 +61,6 @@ for i in range(len(testdata)):
     sheet.Range["A%s" % (i+1)].Value2 = testdata[i].name
 
 workbook.SaveAs(file)
-time.sleep(10)
+# time.sleep(10)
 
 excel.Quit()
