@@ -5,7 +5,6 @@ import string
 import getopt
 import sys
 import clr
-import time
 
 clr.AddReferenceByName("Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c")
 
@@ -61,6 +60,5 @@ for i in range(len(testdata)):
     sheet.Range["A%s" % (i+1)].Value2 = testdata[i].name
 
 workbook.SaveAs(file)
-# time.sleep(10)
 
 excel.Quit()
