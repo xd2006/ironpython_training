@@ -38,7 +38,7 @@ def clear(s):
     return re.sub("\s+", " ", s)
 
 
-testdata = [Group(name="")] + [
+testdata = [
     Group(name=random_string("testname", 10))
     for i in range(n)
 ]
