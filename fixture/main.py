@@ -27,9 +27,9 @@ class MainHelper:
 
     def ensure_modals_closed(self):
         modals = self.app.main_window.ModalWindows()
-        if len(modals) > 0:
+        if modals:
             child_modals = modals[0].ModalWindows()
-            if len(child_modals) > 0:
+            if child_modals:
                 child_modals[0].Close()
             modals[0].Close()
 

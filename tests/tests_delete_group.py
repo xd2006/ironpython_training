@@ -12,4 +12,3 @@ def test_delete_group(app):
     new_list = app.group.get_group_list()
     old_list.remove(group_to_delete)
     assert sorted(old_list) == sorted(new_list)
-    app.main.exit()

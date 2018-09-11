@@ -37,6 +37,7 @@ class Sut:
 
     def is_valid(self):
         try:
-            return self.main_window is not None
+            self.application.GetWindow("Free Address Book")
+            return True
         except:
             return False
